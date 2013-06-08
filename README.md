@@ -5,7 +5,7 @@ A Zenphoto plugin to embed maps from Google Maps or OpenStreetMap via content ma
 
 Install
 -------
-Place file and folder within `/plugin` and enable the plugin.
+Place the plugin file within `/plugin` and enable the plugin.
  
 Usage
 ------
