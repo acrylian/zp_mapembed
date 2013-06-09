@@ -1,6 +1,6 @@
 <?php
 /**
- * A plugin to embed maps from Google Maps and OpenStreetMap using content macros.
+ * A plugin to embed maps from Google Maps and OpenStreetMap using content macros. Requires Zenphoto 1.4.5
  * 
  * Usage Googlemaps:
  * [GOOGLEMAP http://maps.google.de/maps?hl=de&ll=45.706179,4.921875&spn=49.865069,79.189453&t=m&z=4 100% 300 googlemap]
@@ -22,7 +22,7 @@
 $plugin_is_filter = 9|THEME_PLUGIN|ADMIN_PLUGIN;
 $plugin_description = gettext('A plugin to embed Google maps or OpenStreetMaps via content macro.');
 $plugin_author = 'Malte Müller (acrylian)';
-$plugin_version = '1.4.5';
+$plugin_version = '1.0';
 $option_interface = 'zpmapembed';
 
 zp_register_filter('content_macro','zpmapembed::macro');
