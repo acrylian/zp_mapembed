@@ -34,7 +34,7 @@ class zpmapembed {
 	 * class instantiation function
 	 */
 	function __construct() {
-		setOptionDefault('zpmapembed_width',640);
+		setOptionDefault('zpmapembed_width','100%');
 		setOptionDefault('zpmapembed_height',480);
 		$this->width = getOption('zpmapembed_width');
 		$this->height = getOption('zpmapembed_height');
