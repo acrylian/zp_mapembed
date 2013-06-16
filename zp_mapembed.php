@@ -1,6 +1,6 @@
 <?php
 /**
- * A plugin to embed maps from Google Maps and OpenStreetMap using content macros. Requires Zenphoto 1.4.5
+ * A plugin to embed maps from Google Maps and OpenStreetMap using content macros.
  * 
  * Usage Googlemaps:
  * [GOOGLEMAP http://maps.google.de/maps?hl=de&ll=45.706179,4.921875&spn=49.865069,79.189453&t=m&z=4 100% 300 googlemap]
@@ -22,7 +22,7 @@
 $plugin_is_filter = 9|THEME_PLUGIN|ADMIN_PLUGIN;
 $plugin_description = gettext('A plugin to embed Google maps or OpenStreetMaps via content macro.');
 $plugin_author = 'Malte Müller (acrylian)';
-$plugin_version = '1.0';
+$plugin_version = '1.4.5';
 $option_interface = 'zpmapembed';
 
 zp_register_filter('content_macro','zpmapembed::macro');
@@ -34,7 +34,7 @@ class zpmapembed {
 	 * class instantiation function
 	 */
 	function __construct() {
-		setOptionDefault('zpmapembed_width','100%');
+		setOptionDefault('zpmapembed_width',640);
 		setOptionDefault('zpmapembed_height',480);
 		$this->width = getOption('zpmapembed_width');
 		$this->height = getOption('zpmapembed_height');
@@ -55,14 +55,14 @@ class zpmapembed {
 	static function macro($macros) {
 		$macros['GOOGLEMAP'] = array(
 				'class'=>'expression',
-				'regex'=>'/^(.*)\s(.*)\s(.*)\s(.*)$/', 
+				'params'=> array('string','string*','string*','string*'), 
 				'value'=>'zpmapembed::getGoogleMap($1,$2,$3,$4);',
 				'owner'=>'zp_mapembed',
 				'desc'=>gettext('Map url (%1); width (%2) and height (%3)– absolute number (e.g. 200) or percentage value (100%) allowed – and CSS class (%4).')
 				);
 		$macros['OPENSTREETMAP'] = array(
 				'class'=>'expression',
-				'regex'=>'/^(.*)\s(.*)\s(.*)\s(.*)$/', 
+				'params'=> array('string','string*','string*','string*'), 
 				'value'=>'zpmapembed::getOpenStreetMap($1,$2,$3,$4);',
 				'owner'=>'zp_mapembed',
 				'desc'=>gettext('Parameters: OSM Permalink url (%1); width (%2) and height (%3) – absolute number (e.g. 200) or percentage value (100%) allowed – and CSS class (%4).')
@@ -70,14 +70,14 @@ class zpmapembed {
 		return $macros;
 	}
 
-	static function getGoogleMap($url,$width,$height,$class='') {
+	static function getGoogleMap($url,$width='100%',$height='200',$class='') {
 		if(empty($width)) $this->width;
 		if(empty($height)) $this->height;
 		if(empty($class)) $class = 'zpgooglemap';
 		return '<iframe class="'.$class.'" src="'.$url.'&amp;ie=UTF8&amp;output=embed" width="'.$width.'" height="'.$height.'"></iframe><p><a href="'.$url.'&amp;source=embed">'.gettext('Larger map display').'</a></p>';
 	}
 	
-	static function getOpenStreetMap($url,$width,$height,$class='') {
+	static function getOpenStreetMap($url,$width='100%',$height='200',$class='') {
 		if(empty($width)) $this->width;
 		if(empty($height)) $this->height;
 		if(empty($class)) $class = 'zpopenstreetmap';
