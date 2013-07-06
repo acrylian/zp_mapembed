@@ -55,16 +55,16 @@ class zpmapembed {
 	
 	static function macro($macros) {
 		$macros['GOOGLEMAP'] = array(
-				'class'=>'expression',
+				'class'=>'function',
 				'params'=> array('string','string*','string*','string*'), 
-				'value'=>'zpmapembed::getGoogleMap($1,$2,$3,$4);',
+				'value'=>'zpmapembed::getGoogleMap',
 				'owner'=>'zp_mapembed',
 				'desc'=>gettext('Map url (%1); width (%2) and height (%3)– absolute number (e.g. 200) or percentage value (100%) allowed – and CSS class (%4).')
 				);
 		$macros['OPENSTREETMAP'] = array(
-				'class'=>'expression',
+				'class'=>'function',
 				'params'=> array('string','string*','string*','string*'), 
-				'value'=>'zpmapembed::getOpenStreetMap($1,$2,$3,$4);',
+				'value'=>'zpmapembed::getOpenStreetMap',
 				'owner'=>'zp_mapembed',
 				'desc'=>gettext('Parameters: OSM Permalink url (%1); width (%2) and height (%3) – absolute number (e.g. 200) or percentage value (100%) allowed – and CSS class (%4).')
 				);
