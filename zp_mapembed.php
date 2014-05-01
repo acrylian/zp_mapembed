@@ -74,15 +74,15 @@ class zpmapembed {
 	}
 
 	static function getGoogleMap($url,$width='100%',$height='200',$class='') {
-		if(empty($width)) $this->width;
-		if(empty($height)) $this->height;
+		if(empty($width)) $width = $this->width;
+		if(empty($height)) $height = $this->height;
 		if(empty($class)) $class = 'zpgooglemap';
 		return '<iframe class="'.$class.'" src="'.$url.'&amp;ie=UTF8&amp;output=embed" width="'.$width.'" height="'.$height.'"></iframe><p><a href="'.$url.'&amp;source=embed">'.gettext('Larger map display').'</a></p>';
 	}
 	
 	static function getOpenStreetMap($url,$width='100%',$height='200',$class='') {
-		if(empty($width)) $this->width;
-		if(empty($height)) $this->height;
+		if(empty($width)) $width = $this->width;
+		if(empty($height)) $height = $this->height;
 		if(empty($class)) $class = 'zpopenstreetmap';
 		return '<iframe class="'.$class.'" src="'.$url.'" width="'.$width.'" height="'.$height.'"></iframe><p><a href="'.$url.'">'.gettext('Larger map display').'</a></p>';
 	}
