@@ -1,7 +1,7 @@
 zp_mapembed
 ===========
 
-A Zenphoto plugin to embed maps from Google Maps or OpenStreetMap via content macros.
+A [Zenphoto](http://www.zenphoto.org) plugin to embed maps from [Google Maps](https://www.google.de/maps/) or [OpenStreetMap](http://www.openstreetmap.org/) via content macros.
 
 Install
 -------
