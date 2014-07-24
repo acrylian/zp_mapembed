@@ -16,16 +16,16 @@
  *
  * Those followed as above by width/height (number or percentage like 100%) and a CSS class name (all required)
  *
- * @license GPL v3 
- * @author Malte Müller (acrylian)
- *
+ * @author Malte Müller (acrylian) <info@maltem.de>
+ * @copyright 2014 Malte Müller
+ * @license GPL v3 or later
  * @package plugins
  * @subpackage misc
  */
 $plugin_is_filter = 9|THEME_PLUGIN|ADMIN_PLUGIN;
 $plugin_description = gettext('A plugin to embed Google maps or OpenStreetMaps via content macro.');
 $plugin_author = 'Malte Müller (acrylian)';
-$plugin_version = '1.4.5';
+$plugin_version = '1.0.1';
 $option_interface = 'zpmapembed';
 
 zp_register_filter('content_macro','zpmapembed::macro');
