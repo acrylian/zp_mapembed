@@ -10,13 +10,13 @@ Place the plugin file within `/plugin` and enable the plugin.
 Usage
 ------
 
-###Usage Googlemaps:
+### Usage Googlemaps:
 
 `[GOOGLEMAP http://maps.google.de/maps?hl=de&ll=45.706179,4.921875&spn=49.865069,79.189453&t=m&z=4 100% 300 googlemap]`
 
 The url is the map link followed by width/height (number or percentage like 100%) and a CSS class name (all required)
   
-OpenStreetMaps:
+### OpenStreetMaps:
 
 `[OPENSTREETMAP http://www.openstreetmap.org/export/embed.html?bbox=-11,14.5,56.4,67.4&amp;layer=mapnik 100% 300 googlemap]`
  
